@@ -24,9 +24,9 @@ jobs:
         port: 22
         script: |
           cd /var/www/html/
-          sudo git init
-          sudo git config --global user.email "amitkumbhare618@gmail.com"
-          sudo git config --global user.name "amitkumbhare"
-          sudo git remote add origin https://github.com/amitkumbhare/New_Project.git
-          sudo git pull origin master
-          sudo git status
+          git init
+          git config --global user.email "amitkumbhare618@gmail.com"
+          git config --global user.name "amitkumbhare"
+          git remote add origin https://github.com/amitkumbhare/New_Project.git
+          git pull origin master
+          git status
