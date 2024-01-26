@@ -128,3 +128,10 @@ The repository includes a GitHub Actions workflow (`deploy.yml`) for automated d
 ![DashBoard](https://github.com/amitkumbhare/New_Project/blob/master/dashboard.png)
 
 ![Index_Page](https://github.com/amitkumbhare/New_Project/blob/master/index_page.png)
+
+
+
+ # Automation required  prerequisite Nginx, PHP, and MariaDB on the VPS system.
+
+ - Once all are present it will deploy the WordPress on the client machine.
+ - we can do a lot more with the automation script.
