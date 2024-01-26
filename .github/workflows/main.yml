@@ -23,7 +23,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
+          git init
           cd /var/www/html/
           git pull origin master
           git status
-          which npm
