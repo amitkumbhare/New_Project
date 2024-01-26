@@ -1,4 +1,4 @@
-# WordPress Deployment and Automation
+  # WordPress Deployment and Automation
 
 ## Overview
 
@@ -30,18 +30,26 @@ sudo systemctl enable nginx
 ### Step 2: Install MariaDB (or MySQL) and Configure Database
 
 -# Install MariaDB
+
 ```sudo apt install mariadb-server```
 
+-# Run the included mysql_secure_installation security script to restrict access to the server
+
+```sudo mysql_secure_installation```
+
 -# Access MySQL (or MariaDB) and create database and user
-```sudo mysql -u root -p```
+
+```sudo mysql -u root -p ```
 
 -# Execute SQL commands
+
 ```CREATE DATABASE wordpress;
 CREATE USER 'brainstorm'@'localhost' IDENTIFIED BY 'Bra!n$t0rm';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'brainstorm'@'localhost';
 FLUSH PRIVILEGES;
 exit;
 ```
+
 ### Step 3: Install PHP and Configure Nginx
 
 ```sudo apt install php-fpm php-mysql```
@@ -55,6 +63,7 @@ exit;
 ```sudo systemctl restart nginx```
 
 ### Step 4: Install WordPress
+
 ```
 cd /var/www/html
 sudo curl -O https://wordpress.org/latest.tar.gz
@@ -91,7 +100,9 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'brainstorm'@'localhost';
 FLUSH PRIVILEGES;
 exit;
 ```
+
 ### Step 7: Complete WordPress Installation
+
 Open your web browser and visit `http://your_domain_or_ip`.
 Follow the WordPress installation prompts, providing the database information created earlier.
 
@@ -99,8 +110,21 @@ Follow the WordPress installation prompts, providing the database information cr
 
 The repository includes a GitHub Actions workflow (`deploy.yml`) for automated deployment to the VPS. Ensure the following secrets are added to your GitHub repository:
 
+![Deploy_yml](https://github.com/amitkumbhare/New_Project/blob/master/Deploy_yml.png)
+
 `SSH_PRIVATE_KEY`: Private key for SSH authentication.
 
 `USERNAME`: SSH username for connecting to the VPS.
 
 `HOST`: VPS hostname or IP address.
+
+ - See below screenshot: 
+
+ ![Add_Key_and_Value](https://github.com/amitkumbhare/New_Project/blob/master/Screenshot.png)
+
+
+ --- The website will look like this ---
+
+![DashBoard](https://github.com/amitkumbhare/New_Project/blob/master/dashboard.png)
+
+![Index_Page](https://github.com/amitkumbhare/New_Project/blob/master/index_page.png)
